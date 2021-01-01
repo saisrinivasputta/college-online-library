@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin: 0;
+  background-attachment: fixed;
+  background-color:rgba(255,0,0,0.2);
+  background-repeat:no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  background-size:100%;
+}
+
+.container {
+  padding: 64px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 20px;
+}
+
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+
+.large-font {
+  font-size: 48px;
+}
+
+.xlarge-font {
+  font-size: 45px;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+  }
+ 
+}
+
+</style>
+</head>
+<body>
+
+<div >
+  <h1  style="color:slateblue;text-align: center;"><b>WELCOME TO SASTRA LIBRARY MANAGEMENT</b></h1>
+  
+</div>
+
+<!-- The App Section -->
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+      
+      <h1 class="large-font" style="color:MediumSeaGreen;"><b>Want To See All Books Available in Library?</b></h1>
+      <p>Please click below to view all the books Available in our SASTRA library. </p>
+      <form action="booklist">
+      <button class="button">View Books</button>
+      </form>
+    </div>
+    <div class="column-33">
+        <img src="{% static 'images/library2.jpg'%}" width="335" height="471">
+    </div>
+  </div>
+</div>
+
+<!-- Clarity Section -->
+<div class="container" style="background-color:#f1f1f1">
+  <div class="row">
+    <div class="column-33">
+      <img src="{% static 'images/mybooks.jpg'%}" alt="App" width="335" height="471">
+    </div>
+    <div class="column-66">
+      <h1 class="xlarge-font"  style="color:red;"><b>Did you Borrow books?</b></h1>
+      <p><span style="font-size:24px">Please click below to see all the books you have taken from library.</p>
+      <form action="\studentbooklist">
+      <button class="button">My Books</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- The App Section -->
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+     
+      <h1 class="large-font" style="color:blueviolet;"><b>Are You Looking for your profile?</b></h1>
+      <p>Please click below to look at your details and if you want to change password.</p>
+      <form action="studentprofile">
+      <button class="button">My Profile</button>
+    </form>
+    </div>
+    <div class="column-33">
+        <img src="{% static 'images/myprofile.png' %}" width="335" height="471" >
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

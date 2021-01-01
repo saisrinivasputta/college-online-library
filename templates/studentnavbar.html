@@ -1,0 +1,31 @@
+
+{% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color:snow;
+    margin-right: 20px;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <img src="https://www.sastra.edu/sap16/images/logo.png" width=200 >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link active" href="https://www.sastra.edu/2014-01-29-07-15-32/sastra.html">About SASTRA</a>
+      </li>
+    
+    </ul>
+  </div>
+
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  
+  
+  <a href="studentlogout"><i class="fa fa-fw fa-user"></i>Logout</a>
+</nav>

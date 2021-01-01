@@ -1,0 +1,108 @@
+
+{%load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+<style media="screen">
+table.redTable {
+border: 2px solid #A40808;
+background-color: #EEE7DB;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table.redTable td, table.redTable th {
+border: 1px solid #AAAAAA;
+padding: 3px 2px;
+}
+table.redTable tbody td {
+font-size: 13px;
+}
+table.redTable tr:nth-child(even) {
+background: #F5C8BF;
+}
+table.redTable thead {
+background: #A40808;
+}
+table.redTable thead th {
+font-size: 19px;
+font-weight: bold;
+color: #FFFFFF;
+text-align: center;
+border-left: 2px solid #A40808;
+}
+table.redTable thead th:first-child {
+border-left: none;
+}
+
+table.redTable tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #A40808;
+}
+table.redTable tfoot td {
+font-size: 13px;
+}
+table.redTable tfoot .links {
+text-align: right;
+}
+table.redTable tfoot .links a{
+display: inline-block;
+background: #FFFFFF;
+color: #A40808;
+padding: 2px 8px;
+border-radius: 5px;
+}
+
+</style>
+
+  </head>
+  <body>
+    {% include 'studentinsidenavbar.html' %}
+    <br>
+    <br>
+    <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 50px;text-align:center;'>Available Books in Library !</h3>
+{% if books%}
+<table class="redTable">
+<thead>
+<tr>
+<th>Book Name</th>
+<th>ISBN</th>
+<th>Author</th>
+<th>Category</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="4" rowspan="4">
+<div class="links"></div>
+</td>
+</tr>
+</tfoot>
+<tbody>
+  {% for book in books %}
+    <tr>
+      <td>{{book.nameofbook}}</td>
+      <td>{{book.isbn}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.category}}</td>
+    </tr>
+  {% endfor %}
+</tbody>
+</table>
+{%else%}
+<h1>Have 0 book</h1>
+{%endif%}
+{% include 'footer.html' %}
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
